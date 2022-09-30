@@ -1,23 +1,28 @@
 import express, {Request, Response} from 'express'
 import * as dotenv from 'dotenv'
 import cors from 'cors'
+import Logger from './Logger.js'
+import { Pool } from 'pg'
+import {env} from './config'
 dotenv.config()
-
-class Logger {
-  status(req: Request): void {
-    console.log(`[HTTP ${req.method} ${new Date(Date.now()).toLocaleString()}] ${req.protocol}://${req.hostname}${req.url}`)
-  }
-}
 
 const log = new Logger()
 const app = express()
 const PORT = process.env.PORT || 3000
 
-let value = 0
-let lastUpdate = Date.now()
-
 app.use(cors())
 
+const pgClient = new Pool({
+ user: env.dbUser,
+ host: env.dbHost,
+ database: env.dbDatabase,
+ password: env.dbPassword,
+ port: env.dbPort
+})
+
+pgClient.on('connect', client => {
+  client.query('CREATE TABLE IF NOT EXISTS values (number INT)').catch(err => console.log(err))
+})
 
 app.use(express.json())
 app.use('/', express.static('../ui/dist'))
