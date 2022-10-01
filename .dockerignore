@@ -1,0 +1,7 @@
+/.git
+/.idea
+/Jenkinsfile
+/Dockerfile
+/docker-compose.yml
+/node_modules
+/i18n
