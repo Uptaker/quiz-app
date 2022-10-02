@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cb7d3ab-ddd2-49a4-95cc-e6e22464dd95" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/common/LinkTo.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layout/NavBarLink.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/Navbar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/Navbar.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/NavBarLink.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/NavBarLink.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1664617162804</updated>
       <workItem from="1664617165971" duration="8926000" />
-      <workItem from="1664729033182" duration="5367000" />
+      <workItem from="1664729033182" duration="5708000" />
     </task>
     <task id="LOCAL−00001" summary="add initial admin route">
       <created>1664618218567</created>
@@ -127,7 +123,13 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1664732347397</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="introduce LinkTo and NavBarLink">
+      <created>1664734725309</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1664734725309</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,7 +141,8 @@
     <MESSAGE value="setup page styles &amp; cards" />
     <MESSAGE value="disable svelte-navigator header outlines" />
     <MESSAGE value="disable outline only for headers" />
-    <option name="LAST_COMMIT_MESSAGE" value="disable outline only for headers" />
+    <MESSAGE value="introduce LinkTo and NavBarLink" />
+    <option name="LAST_COMMIT_MESSAGE" value="introduce LinkTo and NavBarLink" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

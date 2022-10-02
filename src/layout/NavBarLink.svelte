@@ -17,6 +17,7 @@
     text-decoration: none;
     box-sizing: border-box;
     transition: border 50ms, height 1s;
+    border-bottom: 2px solid transparent;
   }
 
   :global(.nav-active) {
