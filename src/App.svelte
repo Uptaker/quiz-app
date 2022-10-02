@@ -7,6 +7,7 @@
   import AdminPage from "./routes/admin/AdminPage.svelte";
   import Navbar from "./layout/Navbar.svelte";
   import NavBarLink from "./layout/NavBarLink.svelte";
+  import {SvelteToast} from '@zerodevx/svelte-toast'
 
   function showUnhandledError(e: PromiseRejectionEvent) {
     console.error(e.reason)
@@ -15,6 +16,7 @@
 </script>
 
 <svelte:window on:unhandledrejection={showUnhandledError}/>
+<SvelteToast/>
 
 <main class="container mw-100 p-3">
   <Router>

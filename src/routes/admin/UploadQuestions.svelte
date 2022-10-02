@@ -1,5 +1,6 @@
 <script lang="ts">
   import {formatBytes, getFileExtension} from "../../utils";
+  import {toast} from '@zerodevx/svelte-toast'
 
 
   let files: File[]
@@ -15,7 +16,19 @@
         method: "POST",
         body: formData,
       });
-      statusCode = response.status;
+      if (response.ok) toast.push('Failid ülesse laetud', {
+        theme: {
+          '--toastBackground': '#48BB78',
+          '--toastBarBackground': '#2F855A'
+        }
+      })
+      else toast.push('Tekis süsteemi tõrge. Palun proovige uuesti.', {
+        theme: {
+          '--toastBackground': '#F56565',
+          '--toastBarBackground': '#C53030',
+          '--toastColor': 'white'
+        }
+      })
     }
   }
 </script>
