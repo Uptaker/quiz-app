@@ -28,6 +28,7 @@ table,
 td,
 .form-control {
   color: var(--text-color);
+  outline: none;
 }
 
 tr {

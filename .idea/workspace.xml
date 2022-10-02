@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cb7d3ab-ddd2-49a4-95cc-e6e22464dd95" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/common/Card.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/NotFoundPage.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/Page.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/PageCard.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/SpinnerIcon.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layout/Navbar.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/AdminPage.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/admin/UploadQuestions.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/home/HomePage.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/quiz/QuizPage.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/tests/TestsPage.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.override.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.override.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/route.admin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/route.admin.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1664617162804</updated>
       <workItem from="1664617165971" duration="8926000" />
-      <workItem from="1664729033182" duration="2742000" />
+      <workItem from="1664729033182" duration="3053000" />
     </task>
     <task id="LOCAL−00001" summary="add initial admin route">
       <created>1664618218567</created>
@@ -126,7 +104,13 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1664618229149</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="setup page styles &amp; cards">
+      <created>1664732104460</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1664732104460</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +119,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add initial admin route" />
     <MESSAGE value="files by IDEA" />
-    <option name="LAST_COMMIT_MESSAGE" value="files by IDEA" />
+    <MESSAGE value="setup page styles &amp; cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="setup page styles &amp; cards" />
   </component>
 </project>
