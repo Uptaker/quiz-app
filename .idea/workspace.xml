@@ -91,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1664617162804</updated>
       <workItem from="1664617165971" duration="8926000" />
-      <workItem from="1664729033182" duration="5708000" />
+      <workItem from="1664729033182" duration="6039000" />
     </task>
     <task id="LOCAL−00001" summary="add initial admin route">
       <created>1664618218567</created>
@@ -129,7 +129,13 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1664734725309</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="no jumping when hovering on navbar">
+      <created>1664734851680</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1664734851680</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +148,8 @@
     <MESSAGE value="disable svelte-navigator header outlines" />
     <MESSAGE value="disable outline only for headers" />
     <MESSAGE value="introduce LinkTo and NavBarLink" />
-    <option name="LAST_COMMIT_MESSAGE" value="introduce LinkTo and NavBarLink" />
+    <MESSAGE value="no jumping when hovering on navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="no jumping when hovering on navbar" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

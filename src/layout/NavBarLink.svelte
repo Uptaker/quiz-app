@@ -5,7 +5,7 @@
   export let to: string
 
   const location = useLocation()
-  $: active = to && $location.pathname.startsWith(to)
+  $: active = to && (($location.pathname == '/' && (to == '' || to == '/')) || $location.pathname.startsWith('/' + to))
 </script>
 
 <LinkTo class="nav-item py-1 px-3 {active ? 'nav-active' : ''}" {to}><slot/></LinkTo>
