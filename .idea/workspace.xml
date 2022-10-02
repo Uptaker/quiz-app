@@ -2,19 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cb7d3ab-ddd2-49a4-95cc-e6e22464dd95" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/routes/route.admin.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/Card.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/NotFoundPage.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/Page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/PageCard.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/SpinnerIcon.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layout/Navbar.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/admin/AdminPage.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/admin/UploadQuestions.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/home/HomePage.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/quiz/QuizPage.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/tests/TestsPage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.override.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.override.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/route.admin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/route.admin.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AdminPage" />
+        <option value="HomePage" />
+        <option value="QuizPage" />
+        <option value="TestsPage" />
+        <option value="NotFoundPage" />
+        <option value="Components" />
+        <option value="pages" />
+        <option value="Page" />
+        <option value="Card" />
+        <option value="SpinnerIcon" />
+        <option value="UploadQuestions" />
+        <option value="PageCard" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="2FWoNIAApVGgBadcygthJc6KPrc" />
   <component name="ProjectViewState">
@@ -25,18 +70,34 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
     <property name="ts.external.directory.path" value="C:\Users\User\Desktop\Dev\test-questions-app\node_modules\typescript\lib" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\Dev\test-questions-app" />
+      <recent name="C:\Users\User\Desktop\Dev\test-questions-app\src\admin\routes" />
+      <recent name="C:\Users\User\Desktop\Dev\test-questions-app\src\admin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\Dev\test-questions-app\src" />
+      <recent name="C:\Users\User\Desktop\Dev\test-questions-app\src\common" />
+      <recent name="C:\Users\User\Desktop\Dev\test-questions-app\admin" />
+      <recent name="C:\Users\User\Desktop\Dev\test-questions-app\src\user" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -50,11 +111,30 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664617162804</updated>
-      <workItem from="1664617165971" duration="936000" />
+      <workItem from="1664617165971" duration="8926000" />
+      <workItem from="1664729033182" duration="2742000" />
     </task>
+    <task id="LOCAL−00001" summary="add initial admin route">
+      <created>1664618218567</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1664618218568</updated>
+    </task>
+    <task id="LOCAL−00002" summary="files by IDEA">
+      <created>1664618229149</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1664618229149</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add initial admin route" />
+    <MESSAGE value="files by IDEA" />
+    <option name="LAST_COMMIT_MESSAGE" value="files by IDEA" />
   </component>
 </project>

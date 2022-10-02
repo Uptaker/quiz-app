@@ -1,17 +1,11 @@
 version: '3.1'
 
 services:
-  translate:
+  quiz-app:
     build: .
     restart: always
+    container_name: quiz-app
+    volumes:
+    - ./cms:/app/cms
     environment:
       - TZ=Europe/Tallinn
-      - GOOGLE_CLIENT_ID
-      - GOOGLE_CLIENT_SECRET
-      - COOKIE_SECRET
-    networks:
-      - proxy
-
-networks:
-  proxy:
-    external: true

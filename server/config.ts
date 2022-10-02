@@ -1,4 +1,4 @@
-export const config: Record<string, string> = {
+export const config = {
   ADMIN_PASSWORD: 'test',
   ADMIN_USER: 'test'
 }

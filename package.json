@@ -4,11 +4,12 @@
     "build": "vite build",
     "build:server": "tsc -m commonjs --target esnext --esModuleInterop true --outDir ./server/build ./server/server.ts",
     "run:server": "npm run build:server && node server/build/server",
-    "test": "web-test-runner \"src/**/*.test.ts\" \"server/**/*.test.ts\""
+    "test": "web-test-runner \\\\\\\\\\\\\\\"src/**/*.test.ts\\\\\\\\\\\\\\\" \\\\\\\\\\\\\\\"server/**/*.test.ts\\\\\\\\\\\\\\\""
   },
   "dependencies": {
     "cookie-parser": "^1.4.6",
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "svelte-navigator": "^3.2.2"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.39",
