@@ -1,12 +1,12 @@
 <script lang="ts">
-  import {Router, Link, Route} from 'svelte-navigator'
+  import {Route, Router} from 'svelte-navigator'
   import HomePage from "./routes/home/HomePage.svelte";
   import NotFoundPage from "./common/NotFoundPage.svelte";
   import QuizPage from "./routes/quiz/QuizPage.svelte";
   import TestsPage from "./routes/tests/TestsPage.svelte";
   import AdminPage from "./routes/admin/AdminPage.svelte";
   import Navbar from "./layout/Navbar.svelte";
-
+  import NavBarLink from "./layout/NavBarLink.svelte";
 
   function showUnhandledError(e: PromiseRejectionEvent) {
     console.error(e.reason)
@@ -20,9 +20,9 @@
   <Router>
     <nav>
       <Navbar>
-        <Link to="/">Home</Link>
-        <Link to="tests">Tests</Link>
-        <Link to="admin">Admin</Link>
+        <NavBarLink to="/">Home</NavBarLink>
+        <NavBarLink to="tests">Tests</NavBarLink>
+        <NavBarLink to="admin">Admin</NavBarLink>
       </Navbar>
     </nav>
     <div>

@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cb7d3ab-ddd2-49a4-95cc-e6e22464dd95" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/common/LinkTo.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layout/NavBarLink.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Navbar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/Navbar.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +28,8 @@
         <option value="SpinnerIcon" />
         <option value="UploadQuestions" />
         <option value="PageCard" />
+        <option value="LinkTo" />
+        <option value="NavBarLink" />
       </list>
     </option>
   </component>
@@ -90,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1664617162804</updated>
       <workItem from="1664617165971" duration="8926000" />
-      <workItem from="1664729033182" duration="3053000" />
+      <workItem from="1664729033182" duration="5367000" />
     </task>
     <task id="LOCAL−00001" summary="add initial admin route">
       <created>1664618218567</created>
@@ -110,7 +115,19 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1664732104460</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="disable svelte-navigator header outlines">
+      <created>1664732280833</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1664732280833</updated>
+    </task>
+    <task id="LOCAL−00005" summary="disable outline only for headers">
+      <created>1664732347397</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1664732347397</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +137,9 @@
     <MESSAGE value="add initial admin route" />
     <MESSAGE value="files by IDEA" />
     <MESSAGE value="setup page styles &amp; cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="setup page styles &amp; cards" />
+    <MESSAGE value="disable svelte-navigator header outlines" />
+    <MESSAGE value="disable outline only for headers" />
+    <option name="LAST_COMMIT_MESSAGE" value="disable outline only for headers" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

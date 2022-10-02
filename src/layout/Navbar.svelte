@@ -7,7 +7,7 @@
         <div class="animated-icon"><span></span><span></span><span></span><span></span></div>
       </button>
 
-      <div class="collapse navbar-collapse gap-2" id="navbarText">
+      <div class="collapse navbar-collapse gap-4" id="navbarText">
         <slot/>
       </div>
     </div>
