@@ -18,29 +18,17 @@
   cursor: pointer;
 }
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-table,
-td,
-.form-control {
+body, h1, h2, h3, h4, h5, table, td, .form-control {
   color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5 {
   outline: none;
+  font-weight: 600;
 }
 
 tr {
   transition: background-color 0.2s;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-weight: 600;
 }
 
 .text-primary {
@@ -267,7 +255,6 @@ td {
 .card {
   border: none;
 }
-
 
 .empty {
   background-color: var(--yellow-lightest) !important;
