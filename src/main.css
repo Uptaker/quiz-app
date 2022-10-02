@@ -22,6 +22,12 @@ body, h1, h2, h3, h4, h5, table, td, .form-control {
   color: var(--text-color);
 }
 
+.spaced {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
 h1, h2, h3, h4, h5 {
   outline: none;
   font-weight: 600;

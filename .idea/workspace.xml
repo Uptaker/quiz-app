@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2cb7d3ab-ddd2-49a4-95cc-e6e22464dd95" name="Default Changelist" comment="">
+    <list default="true" id="2cb7d3ab-ddd2-49a4-95cc-e6e22464dd95" name="Default Changelist" comment="add">
+      <change afterPath="$PROJECT_DIR$/src/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layout/NavBarLink.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/NavBarLink.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/AdminPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/AdminPage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/admin/UploadQuestions.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/UploadQuestions.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +31,7 @@
         <option value="PageCard" />
         <option value="LinkTo" />
         <option value="NavBarLink" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -51,7 +57,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Users\User\Desktop\Dev\test-questions-app\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -68,15 +74,13 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -91,7 +95,8 @@
       <option name="presentableId" value="Default" />
       <updated>1664617162804</updated>
       <workItem from="1664617165971" duration="8926000" />
-      <workItem from="1664729033182" duration="6039000" />
+      <workItem from="1664729033182" duration="7778000" />
+      <workItem from="1664736890979" duration="1436000" />
     </task>
     <task id="LOCAL−00001" summary="add initial admin route">
       <created>1664618218567</created>
@@ -135,7 +140,13 @@
       <option name="presentableId" value="LOCAL−00007" />
       <updated>1664734851680</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="fix active navbar hint">
+      <created>1664735298658</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1664735298658</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +160,8 @@
     <MESSAGE value="disable outline only for headers" />
     <MESSAGE value="introduce LinkTo and NavBarLink" />
     <MESSAGE value="no jumping when hovering on navbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="no jumping when hovering on navbar" />
+    <MESSAGE value="fix active navbar hint" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix active navbar hint" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

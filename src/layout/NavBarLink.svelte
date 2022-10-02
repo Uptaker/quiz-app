@@ -13,7 +13,6 @@
 <style>
   :global(.nav-item) {
     color: dimgray;
-    font-weight: bold;
     text-decoration: none;
     box-sizing: border-box;
     transition: border 50ms, height 1s;
@@ -22,6 +21,7 @@
 
   :global(.nav-active) {
     border-bottom: 2px solid cornflowerblue;
+    font-weight: bold;
   }
 
   :global(.nav-item):hover {
