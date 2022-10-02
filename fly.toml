@@ -7,6 +7,10 @@ processes = []
 
 [env]
 
+[mounts]
+source="storage"
+destination="/app/storage"
+
 [experimental]
   allowed_public_ports = []
   auto_rollback = true

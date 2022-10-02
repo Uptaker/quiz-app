@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2cb7d3ab-ddd2-49a4-95cc-e6e22464dd95" name="Default Changelist" comment="add">
-      <change afterPath="$PROJECT_DIR$/server/routes/route.storage.ts" afterDir="false" />
+    <list default="true" id="2cb7d3ab-ddd2-49a4-95cc-e6e22464dd95" name="Default Changelist" comment="tr">
+      <change beforePath="$PROJECT_DIR$/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/route.admin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/route.admin.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/admin/UploadQuestions.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/UploadQuestions.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly.toml" beforeDir="false" afterPath="$PROJECT_DIR$/fly.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +99,7 @@
       <workItem from="1664617165971" duration="8926000" />
       <workItem from="1664729033182" duration="7778000" />
       <workItem from="1664736890979" duration="1436000" />
-      <workItem from="1664738972937" duration="5266000" />
+      <workItem from="1664738972937" duration="6657000" />
     </task>
     <task id="LOCAL−00001" summary="add initial admin route">
       <created>1664618218567</created>
@@ -155,7 +149,14 @@
       <option name="presentableId" value="LOCAL−00008" />
       <updated>1664735298658</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix routing and send all static files on all non-defined routes. Add first pass of file uploads">
+      <created>1664744363539</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1664744363539</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +171,8 @@
     <MESSAGE value="introduce LinkTo and NavBarLink" />
     <MESSAGE value="no jumping when hovering on navbar" />
     <MESSAGE value="fix active navbar hint" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix active navbar hint" />
+    <MESSAGE value="fix routing and send all static files on all non-defined routes. Add first pass of file uploads" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix routing and send all static files on all non-defined routes. Add first pass of file uploads" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
