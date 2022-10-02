@@ -6,6 +6,6 @@ services:
     restart: always
     container_name: quiz-app
     volumes:
-    - ./cms:/app/cms
+    - ./storage:/app/storage
     environment:
       - TZ=Europe/Tallinn

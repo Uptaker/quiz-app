@@ -7,3 +7,4 @@ public/auth.json
 /.env
 /e2e/test-results/
 /.idea/
+/storage/

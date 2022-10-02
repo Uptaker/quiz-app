@@ -3,17 +3,17 @@
 
 
   let files: File[]
-  let statusCode = ''
+  let statusCode: number
 
   async function handleSubmit() {
     if (files.length > 0) {
       const formData = new FormData();
-      files.forEach(file => {
-        formData.append("file", file);
-      })
-      const response = await fetch("/api/test/upload", {
+      for (const file of files) {
+        formData.append('files', file);
+      }
+      const response = await fetch('/api/quiz/upload', {
         method: "POST",
-        body: formData
+        body: formData,
       });
       statusCode = response.status;
     }
@@ -27,7 +27,7 @@
     />
   </form>
 
-  {statusCode}
+  {statusCode ? statusCode : ''}
   {#if files?.length}
     <table>
       <tr>

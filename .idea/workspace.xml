@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cb7d3ab-ddd2-49a4-95cc-e6e22464dd95" name="Default Changelist" comment="add">
-      <change afterPath="$PROJECT_DIR$/src/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routes/route.storage.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/NavBarLink.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/NavBarLink.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/admin/AdminPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/AdminPage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/route.admin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/route.admin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/admin/UploadQuestions.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin/UploadQuestions.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,22 +50,26 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2FWoNIAApVGgBadcygthJc6KPrc" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="C:\Users\User\Desktop\Dev\test-questions-app\node_modules\typescript\lib" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/drinky/University/test-questions-app/server/routes",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/home/drinky/University/test-questions-app/node_modules/typescript/lib"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/routes" />
       <recent name="C:\Users\User\Desktop\Dev\test-questions-app" />
       <recent name="C:\Users\User\Desktop\Dev\test-questions-app\src\admin\routes" />
       <recent name="C:\Users\User\Desktop\Dev\test-questions-app\src\admin" />
@@ -97,6 +105,7 @@
       <workItem from="1664617165971" duration="8926000" />
       <workItem from="1664729033182" duration="7778000" />
       <workItem from="1664736890979" duration="1436000" />
+      <workItem from="1664738972937" duration="5266000" />
     </task>
     <task id="LOCAL−00001" summary="add initial admin route">
       <created>1664618218567</created>

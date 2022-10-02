@@ -1,6 +1,5 @@
 import {config} from '../config'
-import type {Response, Request} from 'express'
-import path from 'path'
+import type {Request, Response} from 'express'
 
 export class AdminRoute {
 
