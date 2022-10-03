@@ -12,6 +12,9 @@
   --red: #F05C3E;
   --red-accent: #FF4019;
   --red-lightest: #FFEAE6;
+  --toastBackground: rgba(246, 245, 248, 0.95);
+  --toastColor: #424242;
+  --toastBarBackground: #8fe0f5;
 }
 
 :global(a) {

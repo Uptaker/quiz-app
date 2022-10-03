@@ -1,6 +1,6 @@
 <script lang="ts">
   import {formatBytes, getFileExtension} from '../../utils'
-  import {toast} from '@zerodevx/svelte-toast'
+  import {sendToast, ToastType} from '../../toast'
 
 
   let files: File[]
@@ -16,19 +16,8 @@
         method: 'POST',
         body: formData,
       })
-      if (response.ok) toast.push('Failid ülesse laetud', {
-        theme: {
-          '--toastBackground': '#48BB78',
-          '--toastBarBackground': '#2F855A'
-        }
-      })
-      else toast.push('Tekis süsteemi tõrge. Palun proovige uuesti.', {
-        theme: {
-          '--toastBackground': '#F56565',
-          '--toastBarBackground': '#C53030',
-          '--toastColor': 'white'
-        }
-      })
+      if (response.ok) sendToast('Failid ülesse laetud')
+      else sendToast('Tekis süsteemi tõrge. Palun proovige uuesti.', ToastType.ERROR)
     }
   }
 </script>
