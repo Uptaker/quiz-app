@@ -6,5 +6,7 @@ export interface QuizInfo {
 }
 
 export interface QuizQuestion {
-  küsimused: string
+  question: string
+  answer: string
+  pictureName?: string
 }

@@ -3,5 +3,5 @@
 </script>
 
 <PageCard title="Koduleht">
-  <p>This might get scrapped!</p>
+  <p>Tere tulemast!</p>
 </PageCard>

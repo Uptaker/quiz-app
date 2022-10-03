@@ -1,9 +1,9 @@
 :root {
   --bs-font-sans-serif: 'Inter', sans-serif;
   --text-color: #060C2D;
-  --primary: #0044FA;
-  --primary-dark: #003BD9;
-  --primary-accent: #196EFF;
+  --primary: #0672c2;
+  --primary-dark: #044f78;
+  --primary-accent: #1988ff;
   --primary-lightest: #F0F4FF;
   --gray-lightest: #F8FAFB;
   --gray: #C6C7CC;
@@ -126,8 +126,8 @@ hr {
   background-color: var(--primary);
   border-color: var(--primary);
   box-shadow: 0 2px 2px rgba(00, 68, 250, 0.05),
-  0 4px 6px rgba(00, 68, 250, 0.11),
-  0 4px 16px rgba(00, 68, 250, 0.34);
+  0 2px 4px rgba(00, 68, 250, 0.11),
+  0 2px 8px rgba(00, 68, 250, 0.34);
 }
 
 .btn-primary:hover {

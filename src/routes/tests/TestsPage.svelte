@@ -1,7 +1,8 @@
 <script lang="ts">
   import PageCard from '../../common/PageCard.svelte'
+  import QuizList from './QuizList.svelte'
 </script>
 
-<PageCard title="Tests">
-  <p>Quiz page!</p>
+<PageCard transparent padding="p-0" title="Testid">
+  <QuizList/>
 </PageCard>

@@ -4,7 +4,7 @@ import crypto from 'crypto'
 import xlsx from 'xlsx'
 import fs from 'fs'
 import path from 'path'
-import type {QuizInfo} from '../types'
+import type {QuizInfo, QuizQuestion} from '../types'
 
 export class StorageRoute {
   private static storage = multer.diskStorage({
@@ -18,11 +18,11 @@ export class StorageRoute {
   })
   public static upload = multer({storage: this.storage})
 
-  public static readJson(req: Request, res: Response) {
+  public static readQuiz(req: Request, res: Response) {
     const uuid = req.params['uuid']
     if (!uuid) return res.status(400).send('Invalid UUID')
     try {
-      const list = JSON.parse(fs.readFileSync(`./storage/${uuid}/data.json`, 'utf-8'))
+      const list: QuizQuestion[] = JSON.parse(fs.readFileSync(`./storage/${uuid}/data.json`, 'utf-8'))
       res.status(200).send(list)
     } catch (e) {
       console.log(e)
@@ -108,14 +108,14 @@ export class SheetsService {
     console.log('type', extension)
     const spreadsheet = xlsx.readFile(`./storage/${uuid}/source.${extension}`)
     const names = spreadsheet.SheetNames
-    let json: any[] = xlsx.utils.sheet_to_json(spreadsheet.Sheets[names[0]])
+    let json: QuizQuestion[] | any[] = xlsx.utils.sheet_to_json(spreadsheet.Sheets[names[0]])
     json.forEach(j => {
       j.question = j['KÜSIMUSED']
       delete j['KÜSIMUSED']
       j.answer = j['VASTUSED']
       delete j['VASTUSED']
       if (j['PILT']) {
-        j.answer = j['PILT']
+        j.pictureName = j['PILT']
         delete j['PILT']
       }
     });
