@@ -18,9 +18,12 @@
 </script>
 
 {#if quizzes?.length}
+  <div class="d-flex flex-column w-100 gap-4">
   {#each quizzes as quiz}
     <QuizRow {quiz}/>
   {/each}
+  </div>
+
 {:else}
   <Card padding="p-3">
       <h1><i class="fa-solid fa-box-open"></i></h1>

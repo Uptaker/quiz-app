@@ -10,3 +10,7 @@ export function getFileExtension(name: string) {
   const splitted = name.split('.')
   return splitted[splitted.length - 1].toLowerCase()
 }
+
+export function formatUuid(uuid: string) {
+  return uuid.substring(28).toUpperCase()
+}

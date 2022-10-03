@@ -21,7 +21,7 @@
   cursor: pointer;
 }
 
-body, h1, h2, h3, h4, h5, table, td, .form-control {
+body, h1, h2, h3, h4, h5, table, td, a, p .form-control {
   color: var(--text-color);
 }
 
