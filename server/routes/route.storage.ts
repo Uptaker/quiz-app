@@ -122,7 +122,8 @@ export class SheetsService {
     console.log(json)
     this.write(uuid, JSON.stringify(json))
 
-    const name = file.originalname.slice(0, file.originalname.lastIndexOf('.')).replaceAll('-', ' ')
+    const name = file.originalname.slice(0, file.originalname.lastIndexOf('.'))
+      .replaceAll('-', ' ').replaceAll('_', ' ')
     StorageRoute.updateQuizList({name, uuid, createdAt: Date.now().toString()} as QuizInfo)
   }
 
