@@ -15,7 +15,7 @@ export function sendToast(message: string, type: ToastType = ToastType.SUCCESS) 
     barBackground = '#F56565'
     icon = '<i class="fa-solid fa-triangle-exclamation"></i>'
   }
-  toast.push(`<span style="color=${barBackground}">${icon}</span>` + ' ' + message, {
+  toast.push(icon + ' ' + message, {
     pausable: true,
     theme: {
       '--toastBarBackground': barBackground
