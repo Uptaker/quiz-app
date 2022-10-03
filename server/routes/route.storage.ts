@@ -114,6 +114,10 @@ export class SheetsService {
       delete j['KÜSIMUSED']
       j.answer = j['VASTUSED']
       delete j['VASTUSED']
+      if (j['PILT']) {
+        j.answer = j['PILT']
+        delete j['PILT']
+      }
     });
     console.log(json)
     this.write(uuid, JSON.stringify(json))
