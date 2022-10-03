@@ -12,7 +12,7 @@
       for (const file of files) {
         formData.append('files', file)
       }
-      const response = await fetch('/api/quiz/upload', {
+      const response = await fetch('/api/quiz', {
         method: 'POST',
         body: formData,
       })

@@ -20,8 +20,10 @@ app.get('/api/health', async (req: Request, res: Response) => res.sendStatus(204
 app.post('/api/user/login', (req: Request, res: Response) => AdminRoute.login(req, res))
 app.get('/api/user/check', (req: Request, res: Response) => AdminRoute.login(req, res))
 
-app.post('/api/quiz/upload', StorageRoute.upload.array('files'), (req: Request, res: Response) => StorageRoute.store(req, res))
-app.post('/api/quiz/upload/:uuid', StorageRoute.upload.single('files'), (req: Request, res: Response) => StorageRoute.update(req, res))
+app.post('/api/quiz/', StorageRoute.upload.array('files'), (req: Request, res: Response) => StorageRoute.store(req, res))
+app.post('/api/quiz/:uuid', StorageRoute.upload.single('files'), (req: Request, res: Response) => StorageRoute.update(req, res))
+app.get('/api/quiz/', StorageRoute.upload.single('files'), (req: Request, res: Response) => StorageRoute.readQuizList(req, res))
+app.get('/api/quiz/:uuid', StorageRoute.upload.single('files'), (req: Request, res: Response) => StorageRoute.readJson(req, res))
 
 
 function initVerbose() {
