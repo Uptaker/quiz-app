@@ -21,10 +21,11 @@ app.post('/api/user/login', (req: Request, res: Response) => AdminRoute.login(re
 app.get('/api/user/check', (req: Request, res: Response) => AdminRoute.login(req, res))
 
 app.post('/api/quiz/upload', StorageRoute.upload.array('files'), (req: Request, res: Response) => StorageRoute.store(req, res))
+app.post('/api/quiz/upload/:uuid', StorageRoute.upload.single('files'), (req: Request, res: Response) => StorageRoute.update(req, res))
 
 
 function initVerbose() {
-  logger.log(`Listening on port: ${port}`)
+  logger.log(`Started - Listening on port: ${port}`)
 }
 
 app.listen(port, () => {
