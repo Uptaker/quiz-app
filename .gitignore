@@ -6,6 +6,5 @@ public/auth.json
 /server/auth.env
 /.env
 /e2e/test-results/
-/.idea/
 /storage/
-/.idea/
+/.idea/workspace.xml
