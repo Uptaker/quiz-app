@@ -2,6 +2,7 @@
   import {QuizInfo} from '../../../server/types'
   import QuizRow from './QuizRow.svelte'
   import {onMount} from 'svelte'
+  import Card from '../../common/Card.svelte'
 
   let quizzes: QuizInfo[]
 
@@ -20,6 +21,9 @@
   {#each quizzes as quiz}
     <QuizRow {quiz}/>
   {/each}
-<!--{:else}-->
-<!--  <Card>Testid puuduvad</Card>-->
+{:else}
+  <Card padding="p-3">
+      <h1><i class="fa-solid fa-box-open"></i></h1>
+      <p>Testid puuduvad</p>
+  </Card>
 {/if}
