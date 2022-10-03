@@ -1,6 +1,4 @@
-<script lang="ts">
-  import {fly} from 'svelte/transition'
-</script>
+<script lang="ts"></script>
 
 <div class="fix-width mx-auto">
   <slot/>

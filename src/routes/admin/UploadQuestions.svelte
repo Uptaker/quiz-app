@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {formatBytes, getFileExtension} from "../../utils";
+  import {formatBytes, getFileExtension} from '../../utils'
   import {toast} from '@zerodevx/svelte-toast'
 
 
@@ -8,14 +8,14 @@
 
   async function handleSubmit() {
     if (files.length > 0) {
-      const formData = new FormData();
+      const formData = new FormData()
       for (const file of files) {
-        formData.append('files', file);
+        formData.append('files', file)
       }
       const response = await fetch('/api/quiz/upload', {
-        method: "POST",
+        method: 'POST',
         body: formData,
-      });
+      })
       if (response.ok) toast.push('Failid ülesse laetud', {
         theme: {
           '--toastBackground': '#48BB78',
@@ -36,7 +36,7 @@
 <div class="spaced">
   <form id="uploadForm" on:submit|preventDefault={handleSubmit}>
     <input class="form-control" bind:files multiple type="file"
-      accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+           accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
     />
   </form>
 
@@ -48,13 +48,13 @@
         <th>Suurus</th>
         <th>Tüüp</th>
       </tr>
-    {#each Array.from(files) as file}
-      <tr>
-        <td>{file.name}</td>
-        <td>{formatBytes(file.size)}</td>
-        <td>{getFileExtension(file.name)}</td>
-      </tr>
-    {/each}
+      {#each Array.from(files) as file}
+        <tr>
+          <td>{file.name}</td>
+          <td>{formatBytes(file.size)}</td>
+          <td>{getFileExtension(file.name)}</td>
+        </tr>
+      {/each}
     </table>
 
   {/if}

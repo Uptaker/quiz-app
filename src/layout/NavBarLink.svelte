@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LinkTo from "../common/LinkTo.svelte";
+  import LinkTo from '../common/LinkTo.svelte'
   import {useLocation} from 'svelte-navigator'
 
   export let to: string
@@ -8,7 +8,9 @@
   $: active = to && (($location.pathname == '/' && (to == '' || to == '/')) || $location.pathname.startsWith('/' + to))
 </script>
 
-<LinkTo class="nav-item py-1 px-3 {active ? 'nav-active' : ''}" {to}><slot/></LinkTo>
+<LinkTo class="nav-item py-1 px-3 {active ? 'nav-active' : ''}" {to}>
+  <slot/>
+</LinkTo>
 
 <style>
   :global(.nav-item) {

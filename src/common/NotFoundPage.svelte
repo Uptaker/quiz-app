@@ -1,5 +1,5 @@
 <script lang="ts">
-  import PageCard from "./PageCard.svelte";
+  import PageCard from './PageCard.svelte'
 </script>
 
 <PageCard title="Page not found">

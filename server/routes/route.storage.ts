@@ -1,6 +1,6 @@
 import type {Request, Response} from 'express'
-import multer from 'multer';
-import crypto from 'crypto';
+import multer from 'multer'
+import crypto from 'crypto'
 
 export class StorageRoute {
   private static storage = multer.diskStorage({

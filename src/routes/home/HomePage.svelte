@@ -1,6 +1,5 @@
 <script lang="ts">
-  import PageCard from "../../common/PageCard.svelte";
-
+  import PageCard from '../../common/PageCard.svelte'
 </script>
 
 <PageCard title="Koduleht">

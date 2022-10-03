@@ -1,12 +1,12 @@
 <script lang="ts">
   import {Route, Router} from 'svelte-navigator'
-  import HomePage from "./routes/home/HomePage.svelte";
-  import NotFoundPage from "./common/NotFoundPage.svelte";
-  import QuizPage from "./routes/quiz/QuizPage.svelte";
-  import TestsPage from "./routes/tests/TestsPage.svelte";
-  import AdminPage from "./routes/admin/AdminPage.svelte";
-  import Navbar from "./layout/Navbar.svelte";
-  import NavBarLink from "./layout/NavBarLink.svelte";
+  import HomePage from './routes/home/HomePage.svelte'
+  import NotFoundPage from './common/NotFoundPage.svelte'
+  import QuizPage from './routes/quiz/QuizPage.svelte'
+  import TestsPage from './routes/tests/TestsPage.svelte'
+  import AdminPage from './routes/admin/AdminPage.svelte'
+  import Navbar from './layout/Navbar.svelte'
+  import NavBarLink from './layout/NavBarLink.svelte'
   import {SvelteToast} from '@zerodevx/svelte-toast'
 
   function showUnhandledError(e: PromiseRejectionEvent) {
@@ -28,14 +28,14 @@
       </Navbar>
     </nav>
     <div>
-      <Route path="/" component={HomePage} />
-      <Route path="tests" component={TestsPage} />
-      <Route path="admin" component={AdminPage} />
+      <Route path="/" component={HomePage}/>
+      <Route path="tests" component={TestsPage}/>
+      <Route path="admin" component={AdminPage}/>
       <Route path="quiz/*">
         <Route path="/">
-          <NotFoundPage />
+          <NotFoundPage/>
         </Route>
-        <Route path=":id" component={QuizPage} />
+        <Route path=":id" component={QuizPage}/>
       </Route>
     </div>
     <Route component={NotFoundPage}/>

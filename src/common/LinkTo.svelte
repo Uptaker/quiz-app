@@ -4,4 +4,6 @@
   export let to: string
 </script>
 
-<Link class="{$$props.class}" {to}><slot/></Link>
+<Link class="{$$props.class}" {to}>
+  <slot/>
+</Link>
