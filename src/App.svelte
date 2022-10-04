@@ -22,8 +22,8 @@
   <Router>
     <nav>
       <Navbar>
-        <NavBarLink to="/">Home</NavBarLink>
-        <NavBarLink to="tests">Tests</NavBarLink>
+        <NavBarLink to="/">Koduleht</NavBarLink>
+        <NavBarLink to="tests">Testid</NavBarLink>
         <NavBarLink to="admin">Admin</NavBarLink>
       </Navbar>
     </nav>

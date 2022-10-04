@@ -6,6 +6,10 @@ import fs from 'fs'
 import path from 'path'
 import type {QuizInfo, QuizQuestion} from '../types'
 
+enum QuizSheetColumn {
+  QUESTIONS = 'KÜSIMUSED', ANSWERS = 'VASTUSED', PICTURE = 'PILT'
+}
+
 export class StorageRoute {
   private static storage = multer.diskStorage({
     destination: (req: Request, file, cb) => {
@@ -20,13 +24,14 @@ export class StorageRoute {
 
   public static readQuiz(req: Request, res: Response) {
     const uuid = req.params['uuid']
-    if (!uuid) return res.status(400).send('Invalid UUID')
+    if (!uuid) return res.status(400).send('Vale UUID')
     try {
-      const list: QuizQuestion[] = JSON.parse(fs.readFileSync(`./storage/${uuid}/data.json`, 'utf-8'))
-      res.status(200).send(list)
+      const questions: QuizQuestion[] = JSON.parse(fs.readFileSync(`./storage/${uuid}/data.json`, 'utf-8'))
+      const info: QuizInfo = (JSON.parse(fs.readFileSync(`./storage/quizlist.json`, 'utf-8')) as QuizInfo[]).find(q => q.uuid === uuid)!
+      res.status(200).send({questions: questions, info: info})
     } catch (e) {
       console.log(e)
-      res.status(400).send('No such quiz')
+      res.status(400).send('Sellist testi pole olemas')
     }
   }
 
@@ -69,7 +74,7 @@ export class StorageRoute {
     for (const file of files) {
       if (file.startsWith('source')) fs.unlink(`./storage/${uuid}/${file}`, err => {
         // if (err) throw err(`Could not delete file ${file}`)
-        console.log(`File ${file} of ${uuid}was deleted`)
+        console.log(`Fail ${file} of ${uuid} was deleted`)
       })
     }
   }
@@ -82,7 +87,7 @@ export class StorageRoute {
         try {
           SheetsService.read(file)
         } catch (e) {
-          res.status(422).send('Error processing ' + file.filename)
+          res.status(422).send('Tõrge töötlemisel ' + file.filename)
         }
       }
       res.status(200).send('Sending multiple files success!')
@@ -110,13 +115,13 @@ export class SheetsService {
     const names = spreadsheet.SheetNames
     let json: QuizQuestion[] | any[] = xlsx.utils.sheet_to_json(spreadsheet.Sheets[names[0]])
     json.forEach(j => {
-      j.question = j['KÜSIMUSED']
-      delete j['KÜSIMUSED']
-      j.answer = j['VASTUSED']
-      delete j['VASTUSED']
-      if (j['PILT']) {
-        j.pictureName = j['PILT']
-        delete j['PILT']
+      j.question = j[QuizSheetColumn.QUESTIONS]
+      delete j[QuizSheetColumn.QUESTIONS]
+      j.answer = j[QuizSheetColumn.ANSWERS]?.toString()
+      delete j[QuizSheetColumn.ANSWERS]
+      if (j[QuizSheetColumn.PICTURE]) {
+        j.pictureName = j[QuizSheetColumn.PICTURE]
+        delete j[QuizSheetColumn.PICTURE]
       }
     });
     console.log(json)

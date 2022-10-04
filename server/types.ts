@@ -8,5 +8,11 @@ export interface QuizInfo {
 export interface QuizQuestion {
   question: string
   answer: string
+  studentAnswer?: string
   pictureName?: string
+}
+
+export interface Quiz {
+  info: QuizInfo
+  questions: QuizQuestion[]
 }

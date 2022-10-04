@@ -1,3 +1,5 @@
+import type {QuizQuestion} from '../server/types'
+
 export function formatBytes(bytes: number, decimals: number = 2) {
   if (!+bytes) return '0 Bytes'
   const k = 1024
@@ -13,4 +15,8 @@ export function getFileExtension(name: string) {
 
 export function formatUuid(uuid: string) {
   return uuid.substring(28).toUpperCase()
+}
+
+export function isQuizAnswerCorrect(q: QuizQuestion) {
+  return q.studentAnswer?.trim() === q.answer?.trim()
 }
