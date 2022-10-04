@@ -15,10 +15,11 @@
   onMount(() => load())
 
   async function load() {
-    quiz = await fetch('/api/quiz/' + id, {
-      headers: {'Accept': 'application/json'}
-    }).then(res => res.json()).catch(() => quiz = {} as Quiz) ?? {}
-    console.log(quiz)
+    // quiz = await fetch('/api/quiz/' + id, {
+    //   headers: {'Accept': 'application/json'}
+    // }).then(res => res.json()).catch(() => quiz = {} as Quiz) ?? {}
+    // console.log(quiz)
+    quiz = {"questions":[{"question":"Võrdse tulemuse (_____ m) said kirja Maria ja Leena, kuid parema koha sai Maria, kuna tema paremuselt teine katse oli Leena omast pikem.","answer":"26.5","pictureName":"pilt1.jpg"},{"question":"Poolita sõna: palju","answer":"pal-ju"}],"info":{"name":"Testide kysimused vastused pildid","uuid":"a274a14e-e5f6-4c6b-a6f0-227de58acabc","createdAt":"1664923946254"}}
   }
 </script>
 
