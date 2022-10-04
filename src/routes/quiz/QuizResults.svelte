@@ -27,8 +27,12 @@
             Siin oleks <code>{q.pictureName}</code>.
           </div>
         {/if}
-        <QuizAnswerResult key="Õige vastus" value={q.answer}/>
-        <QuizAnswerResult key="Sinu vastus" result={isQuizAnswerCorrect(q) ? 'correct' : 'incorrect'} value={q.studentAnswer}/>
+        {#if isQuizAnswerCorrect(q)}
+          <QuizAnswerResult key="Tubli!" value={q.answer} icon="correct" result="correct"/>
+        {:else}
+          <QuizAnswerResult icon="correct" value={q.answer}/>
+          <QuizAnswerResult icon="incorrect" result="incorrect" value={q.studentAnswer}/>
+        {/if}
       </Card>
   {/each}
 </div>

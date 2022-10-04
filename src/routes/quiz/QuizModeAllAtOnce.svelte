@@ -16,4 +16,3 @@
 {/each}
   <input type="submit" class="btn btn-lg btn-primary py-3 my-5" value="Lõpeta">
 </form>
-
