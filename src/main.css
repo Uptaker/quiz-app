@@ -433,6 +433,10 @@ hr {
   cursor: pointer;
 }
 
+.w-min {
+  width: min-content !important;
+}
+
 .animated-icon span {
   display: block;
   position: absolute;

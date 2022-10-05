@@ -5,6 +5,7 @@
   import QuizPage from './routes/quiz/QuizPage.svelte'
   import TestsPage from './routes/tests/TestsPage.svelte'
   import AdminPage from './routes/admin/AdminPage.svelte'
+  import QuizEditPage from './routes/admin/QuizEditPage.svelte'
   import Navbar from './layout/Navbar.svelte'
   import NavBarLink from './layout/NavBarLink.svelte'
   import {SvelteToast} from '@zerodevx/svelte-toast'
@@ -36,6 +37,7 @@
           <NotFoundPage/>
         </Route>
         <Route path=":id" component={QuizPage}/>
+        <Route path=":id/edit" component={QuizEditPage}/>
       </Route>
     </div>
     <Route component={NotFoundPage}/>

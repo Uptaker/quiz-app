@@ -20,10 +20,10 @@
   }
 
   async function load() {
-    // quizzes = await fetch('/api/quiz', {
-    //   headers: {'Accept': 'application/json'}
-    // }).then(res => res.json()).catch(() => quizzes = []) ?? []
-    quizzes = [{"name":"Testide kysimused vastused pildid","uuid":"bf0d0289-cf0b-449a-bf21-36c7dbdd4977","createdAt":"1664836992002"},{"name":"Piraatlus_vastused_1","uuid":"95b0781d-973b-45fb-b842-0bcc9ada52b7","createdAt":"1664836992088"}]
+    quizzes = await fetch('/api/quiz', {
+      headers: {'Accept': 'application/json'}
+    }).then(res => res.json()).catch(() => quizzes = []) ?? []
+    // quizzes = [{"name":"Testide kysimused vastused pildid","uuid":"bf0d0289-cf0b-449a-bf21-36c7dbdd4977","createdAt":"1664836992002"},{"name":"Piraatlus_vastused_1","uuid":"95b0781d-973b-45fb-b842-0bcc9ada52b7","createdAt":"1664836992088"}]
   }
 </script>
 

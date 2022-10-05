@@ -35,6 +35,23 @@ export class StorageRoute {
     }
   }
 
+  public static deleteQuiz(req: Request, res: Response) {
+    const uuid = req.params['uuid']
+    if (!uuid) return res.status(400).send('Vale UUID')
+    try {
+      this.removeInQuizList(uuid)
+      this.deleteQuizDirectory(uuid)
+      res.status(200).send()
+    } catch (e) {
+      console.log(e)
+      res.status(400).send('Sellist testi pole olemas')
+    }
+  }
+
+  public static deleteQuizDirectory(id: string) {
+    fs.rmSync(`./storage/${id}/`, { recursive: true, force: true })
+  }
+
   public static readQuizList(req: Request, res: Response) {
     let list: QuizInfo[] = []
     try {
@@ -61,11 +78,10 @@ export class StorageRoute {
     fs.writeFileSync(`./storage/quizlist.json`, JSON.stringify(quizInfo))
   }
 
-  // TODO - resume when reached the deletion story
   public static removeInQuizList(uuid: string) {
     const list: QuizInfo[] = JSON.parse(fs.readFileSync(`./storage/quizlist.json`, 'utf-8'))
     const newList = list.filter(quiz => quiz.uuid !== uuid)
-    this.updateQuizList(...newList)
+    this.writeQuizList(...newList)
   }
 
   // TODO - clean up old existing source file before overwriting/adding new
@@ -80,7 +96,6 @@ export class StorageRoute {
   }
 
   static store(req: Request, res: Response) {
-    console.log(req.files)
     if (req.files?.length) {
       // @ts-ignore
       for (const file of req.files) {
@@ -108,9 +123,7 @@ export class StorageRoute {
 export class SheetsService {
   public static read(file: { destination: string; filename: string; originalname: string }) {
     const uuid = file.destination.split('/')[2]
-    console.log('uuid', uuid)
     const extension = file.filename.split('.').pop()
-    console.log('type', extension)
     const spreadsheet = xlsx.readFile(`./storage/${uuid}/source.${extension}`)
     const names = spreadsheet.SheetNames
     let json: QuizQuestion[] | any[] = xlsx.utils.sheet_to_json(spreadsheet.Sheets[names[0]])
@@ -124,7 +137,6 @@ export class SheetsService {
         delete j[QuizSheetColumn.PICTURE]
       }
     });
-    console.log(json)
     this.write(uuid, JSON.stringify(json))
 
     const name = file.originalname.slice(0, file.originalname.lastIndexOf('.'))

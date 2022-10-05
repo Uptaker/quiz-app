@@ -24,6 +24,7 @@
       if (response.ok) sendToast('Failid ülesse laetud')
       else sendToast('Tekis süsteemi tõrge. Palun proovige uuesti.', ToastType.ERROR)
       loading = false
+      files = []
     }
   }
 </script>

@@ -19,6 +19,7 @@ app.post('/api/quiz/', StorageRoute.upload.array('files'), (req: Request, res: R
 app.post('/api/quiz/:uuid', StorageRoute.upload.single('files'), (req: Request, res: Response) => StorageRoute.update(req, res))
 app.get('/api/quiz/', (req: Request, res: Response) => StorageRoute.readQuizList(req, res))
 app.get('/api/quiz/:uuid', (req: Request, res: Response) => StorageRoute.readQuiz(req, res))
+app.delete('/api/quiz/:uuid', (req: Request, res: Response) => StorageRoute.deleteQuiz(req, res))
 
 app.use(express.static('build'))
 app.get('*', (req: Request, res: Response) => {
