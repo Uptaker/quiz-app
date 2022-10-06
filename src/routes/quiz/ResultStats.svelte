@@ -11,7 +11,7 @@
 
 <Card fullWidth flex="">
   {#if percent >= 0}
-    <div class="d-flex justify-content-around align-items-center">
+    <div class="d-flex justify-content-around align-items-center py-5">
       <Pie size={150} {percent} />
       <div class="font-large d-flex flex-column justify-content-around align-items-center gap-3">
         <div class="d-flex justify-content-center gap-5 w-100">

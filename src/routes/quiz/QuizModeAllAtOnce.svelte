@@ -10,7 +10,7 @@
     scrollTo(0, 0)
   }
 </script>
-<form on:submit|preventDefault={submit} class="d-flex flex-column justify-center w-100 gap-4">
+<form on:submit|preventDefault={submit} class="d-flex flex-column justify-center w-100 gap-5">
 {#each questions as q, index}
     <QuizCard question={q} questionAmount={questions.length} index={index + 1} />
 {/each}

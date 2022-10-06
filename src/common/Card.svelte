@@ -3,7 +3,7 @@
 
   export let fullWidth = false
   export let padding = 'p-3 pb-4 pt-lg-4 pb-lg-5 px-lg-5'
-  export let flex = 'd-flex flex-column justify-content-center align-items-center'
+  export let flex = 'd-flex flex-column justify-content-center align-items-center gap-3'
   export let transparent = false
   export let innerTitle: string = ''
   export let outerTitle: string = ''

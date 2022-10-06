@@ -4,6 +4,7 @@
   import QuizAnswerResult from '../../common/QuizAnswerResult.svelte'
   import {isQuizAnswerCorrect} from '../../utils'
   import ResultStats from './ResultStats.svelte'
+  import QuizImage from '../../common/QuizImage.svelte'
 
   export let questions: QuizQuestion[]
   export let showAnswers: boolean
@@ -15,18 +16,14 @@
     showAnswers = false
   }
 </script>
-<div class="d-flex flex-column justify-center w-100 gap-4">
+<div class="d-flex flex-column justify-center w-100 gap-5">
   <ResultStats {questions} {correctAmount}/>
 
   <button class="btn btn-primary py-3 my-5" on:click={reset}>Proovi uuesti</button>
   {#each questions as q}
       <Card fullWidth flex="d-flex justify-content-between align-items-center gap-3 gap-lg-4" padding="px-3 px-md-4 px-lg-5 py-4">
         <span class="lead mb-3">{q.question}</span>
-        {#if q.pictureName}
-          <div style="border: 1px dashed lightslategray; padding: 90px; border-radius: 10px">
-            Siin oleks <code>{q.pictureName}</code>.
-          </div>
-        {/if}
+        <QuizImage question={q} />
         {#if isQuizAnswerCorrect(q)}
           <QuizAnswerResult key="Tubli!" value={q.answer} icon="correct" result="correct"/>
         {:else}

@@ -7,7 +7,7 @@ import path from 'path'
 import type {QuizInfo, QuizQuestion} from '../types'
 
 enum QuizSheetColumn {
-  QUESTIONS = 'KÜSIMUSED', ANSWERS = 'VASTUSED', PICTURE = 'PILT'
+  QUESTIONS = 'KÜSIMUSED', ANSWERS = 'VASTUSED', PICTURE = 'PILT', PICTURES = 'PILDID'
 }
 
 export class StorageRoute {
@@ -22,7 +22,7 @@ export class StorageRoute {
   })
   public static upload = multer({storage: this.storage})
 
-  public static readQuiz(req: Request, res: Response) {
+  public static read(req: Request, res: Response) {
     const uuid = req.params['uuid']
     if (!uuid) return res.status(400).send('Vale UUID')
     try {
@@ -52,7 +52,7 @@ export class StorageRoute {
     fs.rmSync(`./storage/${id}/`, { recursive: true, force: true })
   }
 
-  public static readQuizList(req: Request, res: Response) {
+  public static readList(req: Request, res: Response) {
     let list: QuizInfo[] = []
     try {
       list = JSON.parse(fs.readFileSync(`./storage/quizlist.json`, 'utf-8'))
@@ -63,7 +63,7 @@ export class StorageRoute {
     }
   }
 
-  public static updateQuizList(...newQuizInfo: QuizInfo[]) {
+  public static addToList(...newQuizInfo: QuizInfo[]) {
     let list: QuizInfo[] = []
     try {
       list = JSON.parse(fs.readFileSync(`./storage/quizlist.json`, 'utf-8'))
@@ -75,6 +75,7 @@ export class StorageRoute {
   }
 
   private static writeQuizList(...quizInfo: QuizInfo[]) {
+    if (!fs.existsSync('./storage/')) fs.mkdirSync('./storage/', {recursive: true})
     fs.writeFileSync(`./storage/quizlist.json`, JSON.stringify(quizInfo))
   }
 
@@ -82,17 +83,6 @@ export class StorageRoute {
     const list: QuizInfo[] = JSON.parse(fs.readFileSync(`./storage/quizlist.json`, 'utf-8'))
     const newList = list.filter(quiz => quiz.uuid !== uuid)
     this.writeQuizList(...newList)
-  }
-
-  // TODO - clean up old existing source file before overwriting/adding new
-  private cleanupSource(uuid: string) {
-    const files = fs.readdirSync('./storage/' + uuid)
-    for (const file of files) {
-      if (file.startsWith('source')) fs.unlink(`./storage/${uuid}/${file}`, err => {
-        // if (err) throw err(`Could not delete file ${file}`)
-        console.log(`Fail ${file} of ${uuid} was deleted`)
-      })
-    }
   }
 
   static store(req: Request, res: Response) {
@@ -120,6 +110,113 @@ export class StorageRoute {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+export class ImagesRoute {
+  private static storage = multer.diskStorage({
+    destination: (req: Request, file, cb) => {
+      const filePath = './storage/img/'
+      fs.mkdirSync(filePath , {recursive: true})
+      cb(null, filePath)
+    },
+    filename: (req: Request, file, cb) => cb(null, Buffer.from(file.originalname, 'latin1').toString('utf8',).toLowerCase()),
+
+  })
+  public static upload = multer({storage: this.storage})
+
+  public static read(req: Request, res: Response) {
+    const imageName = req.params['name']?.toLowerCase()
+    if (!imageName) return res.status(400).send('Invalid request')
+    try {
+      res.header("Content-Type", "image/jpeg");
+      res.status(200).sendFile(path.join(__dirname, '../../storage/img/' + imageName), (err) => {
+          if (err) {
+            console.log(err)
+            res.status(404).send("Not found")
+          }
+        })
+    } catch (e) {
+      console.log(e)
+      res.status(404).send('No such image')
+    }
+  }
+
+  public static delete(req: Request, res: Response) {
+    const name = req.params['name']?.toLowerCase()
+    if (!name) return res.status(400).send('Invalid request')
+    try {
+      this.deleteFromList(name)
+      this.deleteImage(name)
+      res.status(200).send()
+    } catch (e) {
+      console.log(e)
+      res.status(404).send('No such image')
+    }
+  }
+
+  public static deleteImage(name: string) {
+    fs.rmSync(`./storage/img/${name}`, { force: true })
+  }
+
+  public static readList(req: Request, res: Response) {
+    let list: string[] = []
+    try {
+      list = JSON.parse(fs.readFileSync(`./storage/imagelist.json`, 'utf-8'))
+    } catch (e) {
+      console.log(e)
+    } finally {
+      res.status(200).send(list)
+    }
+  }
+
+  public static deleteFromList(imageFile: string) {
+    let list: string[] = []
+    try {
+      list = JSON.parse(fs.readFileSync(`./storage/imagelist.json`, 'utf-8'))
+    } catch (e) {
+      list = []
+    } finally {
+      // @ts-ignore
+      this.writeList(list.filter(image => image !== imageFile))
+    }
+  }
+
+  public static addToList(listToAdd: string[]) {
+    let list: string[] = []
+    try {
+      list = JSON.parse(fs.readFileSync(`./storage/imagelist.json`, 'utf-8'))
+    } catch (e) {
+      list = []
+    } finally {
+      this.writeList(list.concat(listToAdd))
+    }
+  }
+
+  private static writeList(fileNames: string[]) {
+    fs.writeFileSync(`./storage/imagelist.json`, JSON.stringify([...new Set(fileNames)]))
+  }
+
+  static store(req: Request, res: Response) {
+    if (req.files?.length) {
+      // @ts-ignore
+      this.addToList(req.files.map(f => f.filename))
+      res.status(200).send('Stored images successfully')
+    } else {
+      res.status(422).send('Could not process request - upload failed')
+    }
+  }
+}
+
 export class SheetsService {
   public static read(file: { destination: string; filename: string; originalname: string }) {
     const uuid = file.destination.split('/')[2]
@@ -135,13 +232,17 @@ export class SheetsService {
       if (j[QuizSheetColumn.PICTURE]) {
         j.pictureName = j[QuizSheetColumn.PICTURE]
         delete j[QuizSheetColumn.PICTURE]
+      } else if (j[QuizSheetColumn.PICTURES]) {
+        j.pictureName = j[QuizSheetColumn.PICTURES]
+        delete j[QuizSheetColumn.PICTURES]
       }
     });
     this.write(uuid, JSON.stringify(json))
 
-    const name = file.originalname.slice(0, file.originalname.lastIndexOf('.'))
+    const utf8name = Buffer.from(file.originalname, 'latin1').toString('utf8')
+    const name = utf8name.slice(0, utf8name.lastIndexOf('.'))
       .replaceAll('-', ' ').replaceAll('_', ' ')
-    StorageRoute.updateQuizList({name, uuid, createdAt: Date.now().toString()} as QuizInfo)
+    StorageRoute.addToList({name, uuid, createdAt: Date.now().toString()} as QuizInfo)
   }
 
   public static write(uuid: string, jsonStringified: string) {

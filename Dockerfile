@@ -19,6 +19,8 @@ RUN npm ci --production
 
 COPY --from=build /app/server/build ./server/
 
+RUN mkdir storage
+
 EXPOSE 8999
 
 CMD node server/server.js

@@ -3,38 +3,42 @@
   import {sendToast, ToastType} from '../../toast'
   import {slide} from 'svelte/transition'
   import Spinner from '../../common/Spinner.svelte'
+  import Card from '../../common/Card.svelte'
 
 
   let files: File[]
-  let statusCode: number
   let showExample = false
   let loading = false
 
   async function handleSubmit() {
-    if (files.length > 0) {
-      loading = true
-      const formData = new FormData()
-      for (const file of files) {
-        formData.append('files', file)
+    try {
+      if (files.length > 0) {
+        loading = true
+        const formData = new FormData()
+        for (const file of files) {
+          formData.append('files', file)
+        }
+
+        const response = await fetch('/api/quiz', {method: 'POST', body: formData})
+        if (response.ok) sendToast('Failid ülesse laetud')
+        else sendToast('Tekis süsteemi tõrge. Palun proovige uuesti.', ToastType.ERROR)
       }
-      const response = await fetch('/api/quiz', {
-        method: 'POST',
-        body: formData,
-      })
-      if (response.ok) sendToast('Failid ülesse laetud')
-      else sendToast('Tekis süsteemi tõrge. Palun proovige uuesti.', ToastType.ERROR)
+    } catch(e) {
+        sendToast('Tekis süsteemi tõrge. Palun proovige uuesti.', ToastType.ERROR)
+    } finally {
       loading = false
       files = []
     }
+
   }
 </script>
 
-<div class="spaced">
-  <div class="d-flex">
+<Card flex="d-flex justify-content-between gap-4 mb-5" padding="px-3 py-4" fullWidth>
+  <div class="d-flex justify-content-between">
+    <h5>Testid</h5>
     <button
       class="btn btn-light"
       on:click={() => showExample = !showExample}>Näidisfail&nbsp;&nbsp;<i class="fa-solid fa-chevron-{showExample ? 'up' : 'down'}"></i></button>
-
   </div>
 
   {#if showExample}
@@ -65,13 +69,12 @@
       </table>
     </div>
   {/if}
-  <form id="uploadForm" on:submit|preventDefault={handleSubmit}>
+  <form id="uploadFile" on:submit|preventDefault={handleSubmit}>
     <input class="form-control" bind:files multiple type="file"
            accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
     />
   </form>
 
-  {statusCode ? statusCode : ''}
   {#if files?.length}
     <table>
       <tr>
@@ -91,12 +94,12 @@
   {/if}
 
   {#if files?.length}
-    <input disabled={loading} form="uploadForm" class="btn btn-light w-lg-50 justify" type="submit" value="Lae ülesse"/>
+    <input disabled={loading} form="uploadFile" class="btn btn-primary w-lg-50 justify" type="submit" value="Lae ülesse"/>
     {#if loading}
       <Spinner/>
     {/if}
   {/if}
-</div>
+</Card>
 
 <style>
   table, th, td {

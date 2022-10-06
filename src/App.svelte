@@ -1,6 +1,5 @@
 <script lang="ts">
   import {Route, Router} from 'svelte-navigator'
-  import HomePage from './routes/home/HomePage.svelte'
   import NotFoundPage from './common/NotFoundPage.svelte'
   import QuizPage from './routes/quiz/QuizPage.svelte'
   import TestsPage from './routes/tests/TestsPage.svelte'
@@ -23,14 +22,12 @@
   <Router>
     <nav>
       <Navbar>
-        <NavBarLink to="/">Koduleht</NavBarLink>
-        <NavBarLink to="tests">Testid</NavBarLink>
+        <NavBarLink to="/">Testid</NavBarLink>
         <NavBarLink to="admin">Admin</NavBarLink>
       </Navbar>
     </nav>
     <div>
-      <Route path="/" component={HomePage}/>
-      <Route path="tests" component={TestsPage}/>
+      <Route path="/" component={TestsPage}/>
       <Route path="admin" component={AdminPage}/>
       <Route path="quiz/*">
         <Route path="/">

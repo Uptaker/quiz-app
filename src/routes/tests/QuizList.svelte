@@ -22,7 +22,7 @@
 
   async function load() {
     quizzes = await fetch('/api/quiz', {
-      headers: {'Accept': 'application/json'}
+      headers: {'Accept': 'application/json; charset=UTF-8'}
     }).then(res => res.json()).catch(() => quizzes = []) ?? []
     // quizzes = [{"name":"Testide kysimused vastused pildid","uuid":"bf0d0289-cf0b-449a-bf21-36c7dbdd4977","createdAt":"1664836992002"},{"name":"Piraatlus_vastused_1","uuid":"95b0781d-973b-45fb-b842-0bcc9ada52b7","createdAt":"1664836992088"}]
   }
@@ -32,7 +32,7 @@
   {#if quizzes.length}
     {@const filteredQuizzes = filtered(quizzes, filter)}
     <div class="d-flex flex-column w-100 gap-4">
-    <input type="text" class="form-control bg-white" placeholder="Otsi..." bind:value={filter} />
+    <input type="text" class="form-control bg-white mb-3" placeholder="Otsi..." bind:value={filter} />
     {#if filteredQuizzes?.length}
       {#each filteredQuizzes as quiz}
         <QuizRow {quiz}/>
