@@ -49,7 +49,7 @@
         <tr>
           <th colspan="2">KÜSIMUSED</th>
           <th>VASTUSED</th>
-          <th class="w-25">PILT</th>
+          <th class="w-25">PILT või PILDID</th>
         </tr>
         <tr>
           <td colspan="2">Mis on Lüganuse valla suurim linn?</td>
