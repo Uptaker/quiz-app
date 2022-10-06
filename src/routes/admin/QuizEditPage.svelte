@@ -51,7 +51,6 @@
     <div class="d-flex justify-content-between gap-5">
       <div class="d-flex gap-3">
         <button class="btn btn-danger" on:click={remove}>Kustuta</button>
-        <button class="btn btn-secondary" disabled>Muuda küsimused</button>
       </div>
       <button class="btn btn-primary" disabled>Salvesta</button>
     </div>
