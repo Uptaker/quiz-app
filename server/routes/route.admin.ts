@@ -22,8 +22,6 @@ export class AdminRoute {
         return this.reject(res)
       }
       callback()
-      log.info(`${req.session}`)
-      console.log('session', req.session)
       res.sendStatus(202)
     } catch (e) {
       log.error('caught error: ' + e)
