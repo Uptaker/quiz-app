@@ -13,7 +13,7 @@
     <Card transparent padding="p-0" class="w-100">
       <div class="w-lg-100">
         <h3 class="text-left w-100 mb-5">Logi sisse</h3>
-        <form on:submit|preventDefault={handleSubmit} class="card py-5 px-3 px-lg-5 shadow">
+        <form on:submit|preventDefault={handleSubmit} class="card py-5 px-3 px-sm-5 shadow">
           <label class="w-100 text-start mb-1" for="username">Nimi</label>
           <input class="form-control mb-5" type="text" id="username" required>
 
