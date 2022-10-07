@@ -17,10 +17,10 @@ COPY --from=build /app/build build
 COPY *.json ./
 RUN npm ci --production
 
-COPY --from=build /app/server/build ./server/
+COPY --from=build /app/build_server/ server
 
 RUN mkdir storage
 
 EXPOSE 8999
-
-CMD node server/server.js
+CMD ls server
+CMD node server/server/server.js

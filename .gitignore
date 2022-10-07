@@ -3,8 +3,7 @@ node_modules
 public/projects.json
 public/auth.json
 /server/*.js
-/server/auth.env
-/.env
 /e2e/test-results/
 /storage/
 /.idea/workspace.xml
+/build_server/

@@ -20,3 +20,5 @@ export function formatUuid(uuid: string) {
 export function isQuizAnswerCorrect(q: QuizQuestion) {
   return q.studentAnswer?.trim() === q.answer?.trim()
 }
+
+export const week = 1000 * 60 * 60 * 24 * 7

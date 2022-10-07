@@ -9,3 +9,6 @@ services:
     - ./storage:/app/storage
     environment:
       - TZ=Europe/Tallinn
+      - ADMIN_USERNAME
+      - ADMIN_PASSWORD
+      - SESSION_SECRET

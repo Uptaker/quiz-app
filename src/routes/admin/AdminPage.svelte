@@ -1,13 +1,13 @@
 <script lang="ts">
   import Page from '../../common/Page.svelte'
-  import PageCard from '../../common/PageCard.svelte'
   import UploadQuestions from './UploadQuestions.svelte'
   import UploadImages from './UploadImages.svelte'
+  import ProtectedPageCard from '../../common/ProtectedPageCard.svelte'
 </script>
 
 <Page>
-  <PageCard title="Admin" transparent>
+  <ProtectedPageCard title="Admin" transparent>
     <UploadQuestions/>
     <UploadImages/>
-  </PageCard>
+  </ProtectedPageCard>
 </Page>

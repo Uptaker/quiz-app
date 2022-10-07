@@ -9,7 +9,7 @@
   <div class="px-1 px-md-3">
     {#if imageError}
       <div style="border: 1px dashed lightslategray; padding: 90px; border-radius: 15px">
-        Siin oleks <code>{question.pictureName}</code>
+        Puudub pilt <code>{question.pictureName}</code>
       </div>
     {:else}
       <img on:error={() => imageError = true} class="w-100 rounded-4"

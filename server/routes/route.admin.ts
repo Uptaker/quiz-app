@@ -1,23 +1,43 @@
 import {config} from '../config'
 import type {Request, Response} from 'express'
+import type {UserAuth} from '../types'
+import {log} from '../Logger'
+import {session} from '../server'
 
 export class AdminRoute {
 
   private static reject(res: Response) {
-    res.setHeader('www-authenticate', 'Basic')
     res.sendStatus(401)
   }
 
-  static login(req: Request, res: Response) {
-    const authorization = req.headers.authorization
-    if (!authorization) return this.reject(res)
-    const [username, password] = Buffer.from(authorization.replace('Basic ', ''), 'base64')
-      .toString().split(':')
+  public static routeGuard(req: Request, res: Response, next: Function){
+    if (req.session.id != session) return res.sendStatus(401)
+    next();
+  }
 
-    if (username !== config.ADMIN_USER && password !== config.ADMIN_PASSWORD) {
-      return this.reject(res)
+  static login(req: Request, res: Response, callback: Function) {
+    try {
+      const auth = req.body as UserAuth
+      if (auth?.username !== config.ADMIN_USER || auth?.password !== config.ADMIN_PASSWORD) {
+        return this.reject(res)
+      }
+      callback()
+      log.info(`${req.session}`)
+      console.log('session', req.session)
+      res.sendStatus(202)
+    } catch (e) {
+      log.error('caught error: ' + e)
+      this.reject(res)
     }
+  }
 
-    res.send('Soon')
+  static logout(req: Request, res: Response) {
+    req.session.destroy(() => { log.info('User logged out') })
+    res.redirect('/')
+  }
+
+  static check(req: Request, res: Response) {
+    if (req.session.id == session) return res.sendStatus(202)
+    else return res.sendStatus(401)
   }
 }

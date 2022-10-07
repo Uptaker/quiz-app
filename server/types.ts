@@ -16,3 +16,8 @@ export interface Quiz {
   info: QuizInfo
   questions: QuizQuestion[]
 }
+
+export interface UserAuth {
+  username: string,
+  password: string
+}

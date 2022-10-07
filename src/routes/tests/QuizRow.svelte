@@ -1,10 +1,10 @@
 <script lang="ts">
+  import {isAdmin} from '../../store/auth'
   import {QuizInfo} from '../../../server/types'
   import Card from '../../common/Card.svelte'
   import LinkTo from '../../common/LinkTo.svelte'
   import {formatUuid} from '../../utils'
 
-  let isAdmin = true
   export let quiz: QuizInfo
 </script>
 
@@ -12,7 +12,8 @@
   <div>
     <div class="fw-bolder mb-3">{quiz.name}</div>
     <div class="text-small d-inline fw-bolder text-primary me-3">#{formatUuid(quiz.uuid)}</div>
-    {#if isAdmin}
+
+      {#if $isAdmin}
       <LinkTo to="/quiz/{quiz.uuid}/edit" class="btn btn-sm btn-light fw-bolder text-small text-primary">
         <i class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;Muuda
       </LinkTo>
