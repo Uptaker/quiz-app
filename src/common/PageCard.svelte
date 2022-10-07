@@ -6,6 +6,6 @@
   export let padding = 'p-0'
 </script>
 
-<Card {transparent} flex {padding} class="mb-3" outerTitle={title}>
+<Card {transparent} flex {padding} class="mb-3 {$$props.class}" outerTitle={title}>
   <slot/>
 </Card>

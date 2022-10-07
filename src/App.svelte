@@ -4,6 +4,7 @@
   import QuizPage from './routes/quiz/QuizPage.svelte'
   import TestsPage from './routes/tests/TestsPage.svelte'
   import AdminPage from './routes/admin/AdminPage.svelte'
+  import LoginPage from './routes/login/LoginPage.svelte'
   import QuizEditPage from './routes/admin/QuizEditPage.svelte'
   import Navbar from './layout/Navbar.svelte'
   import NavBarLink from './layout/NavBarLink.svelte'
@@ -24,10 +25,12 @@
       <Navbar>
         <NavBarLink to="/">Testid</NavBarLink>
         <NavBarLink to="admin">Admin</NavBarLink>
+        <NavBarLink to="/login">Sisene</NavBarLink>
       </Navbar>
     </nav>
     <div>
       <Route path="/" component={TestsPage}/>
+      <Route path="login" component={LoginPage}/>
       <Route path="admin" component={AdminPage}/>
       <Route path="quiz/*">
         <Route path="/">

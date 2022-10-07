@@ -84,6 +84,10 @@ hr {
   font-size: small !important;
 }
 
+.text-large {
+  font-size: large !important;
+}
+
 .bg-light {
   background-color: var(--gray-lightest);
 }
