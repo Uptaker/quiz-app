@@ -38,16 +38,20 @@
         <QuizRow {quiz}/>
       {/each}
     {:else}
-        <Card padding="p-3">
-          <h1><i class="fa-solid fa-magnifying-glass"></i></h1>
+      <Card padding="px-3 py-5">
+        <div class="my-5">
+          <h1 class="text-center" style="font-size: 4rem"><i class="fa-solid fa-magnifying-glass"></i></h1>
           <p>Otsing tagastas tühjuse</p>
-        </Card>
+        </div>
+      </Card>
     {/if}
     </div>
   {:else}
-      <Card padding="p-3">
-        <h1><i class="fa-solid fa-box-open"></i></h1>
-        <p>Testid puuduvad</p>
+      <Card padding="px-3 py-5">
+        <div class="my-5">
+          <h1 class="text-center" style="font-size: 4rem"><i class="fa-solid fa-box-open mb-5"></i></h1>
+          <p>Testid puuduvad</p>
+        </div>
       </Card>
   {/if}
 {:else}
