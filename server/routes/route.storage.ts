@@ -5,6 +5,7 @@ import xlsx from 'xlsx'
 import fs from 'fs'
 import path from 'path'
 import type {QuizInfo, QuizQuestion} from '../types'
+import {log} from '../Logger'
 
 enum QuizSheetColumn {
   QUESTIONS = 'KÜSIMUSED', ANSWERS = 'VASTUSED', PICTURE = 'PILT', PICTURES = 'PILDID'
@@ -30,7 +31,7 @@ export class StorageRoute {
       const info: QuizInfo = (JSON.parse(fs.readFileSync(`./storage/quizlist.json`, 'utf-8')) as QuizInfo[]).find(q => q.uuid === uuid)!
       res.status(200).send({questions: questions, info: info})
     } catch (e) {
-      console.log(e)
+      log.error(`${e}`)
       res.status(400).send('Sellist testi pole olemas')
     }
   }
@@ -43,7 +44,7 @@ export class StorageRoute {
       this.deleteQuizDirectory(uuid)
       res.status(200).send()
     } catch (e) {
-      console.log(e)
+      log.error(`${e}`)
       res.status(400).send('Sellist testi pole olemas')
     }
   }
@@ -57,7 +58,7 @@ export class StorageRoute {
     try {
       list = JSON.parse(fs.readFileSync(`./storage/quizlist.json`, 'utf-8'))
     } catch (e) {
-      console.log(e)
+      log.error(`${e}`)
     } finally {
       res.status(200).send(list)
     }
@@ -139,14 +140,14 @@ export class ImagesRoute {
     if (!imageName) return res.status(400).send('Invalid request')
     try {
       res.header("Content-Type", "image/jpeg");
-      res.status(200).sendFile(path.join(__dirname, '../../storage/img/' + imageName), (err) => {
+      res.status(200).sendFile(path.join('/app/storage/img/' + imageName), (err) => {
           if (err) {
-            console.log(err)
+            log.error(`${err}`)
             res.status(404).send("Not found")
           }
         })
     } catch (e) {
-      console.log(e)
+      log.error(`${e}`)
       res.status(404).send('No such image')
     }
   }
@@ -159,7 +160,7 @@ export class ImagesRoute {
       this.deleteImage(name)
       res.status(200).send()
     } catch (e) {
-      console.log(e)
+      log.error(`${e}`)
       res.status(404).send('No such image')
     }
   }
@@ -173,7 +174,7 @@ export class ImagesRoute {
     try {
       list = JSON.parse(fs.readFileSync(`./storage/imagelist.json`, 'utf-8'))
     } catch (e) {
-      console.log(e)
+      log.error(`${e}`)
     } finally {
       res.status(200).send(list)
     }

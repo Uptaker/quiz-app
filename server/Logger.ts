@@ -7,10 +7,6 @@ class Logger {
     console.error(`${this.timestamp()} [ERROR] ${text}`)
   }
 
-  public log(text: string) {
-    console.log(`${this.timestamp()} ${text}`)
-  }
-
   public timestamp(): string {
     const date = new Date(Date.now())
     return `[${date.getFullYear()}-` +
@@ -21,4 +17,4 @@ class Logger {
   }
 }
 
-export default new Logger()
+export const log = new Logger()
