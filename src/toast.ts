@@ -8,7 +8,7 @@ export function sendToast(message: string, type: ToastType = ToastType.SUCCESS) 
   let barBackground = '#48BB78'
   let icon = '<i class="fa-solid fa-circle-check"></i>'
   if (type == ToastType.INFO) {
-    barBackground = '#8fe0f5'
+    barBackground = '#0672c2'
     icon = '<i class="fa-solid fa-circle-info"></i>'
   }
   if (type == ToastType.ERROR) {
