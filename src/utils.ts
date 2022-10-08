@@ -21,4 +21,9 @@ export function isQuizAnswerCorrect(q: QuizQuestion) {
   return q.studentAnswer?.trim() === q.answer?.trim()
 }
 
+export function dateTime(time?: number | string) {
+  const date = time ? new Date(typeof time === 'string' ? parseInt(time) : time) : new Date(Date.now())
+  return date.toLocaleDateString()
+}
+
 export const week = 1000 * 60 * 60 * 24 * 7
