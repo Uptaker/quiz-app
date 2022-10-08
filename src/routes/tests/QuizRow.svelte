@@ -26,7 +26,12 @@
     {/if}
 
   </div>
-  <LinkTo to="/quiz/{quiz.uuid}" class="btn btn-lg btn-primary"><i class="fa-solid fa-play"></i>&nbsp;&nbsp; Soorita</LinkTo>
+  <div>
+    <LinkTo to="/quiz/{quiz.uuid}" class="btn btn-lg btn-primary"><i class="fa-solid fa-play"></i>&nbsp;&nbsp; Soorita</LinkTo>
+    {#if quiz.size}
+      <div class="text-small text-primary mt-2 text-center"><span class="fw-bolder">{quiz.size}</span>&nbsp;küsimust</div>
+    {/if}
+  </div>
 </Card>
 
 

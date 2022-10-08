@@ -1,6 +1,7 @@
 export interface QuizInfo {
   uuid: string,
   name: string,
+  size: number,
   createdAt: number,
   updatedAt?: number
 }

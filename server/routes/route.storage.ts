@@ -231,8 +231,8 @@ export class SheetsService {
     const extension = file.filename.split('.').pop()
     const spreadsheet = xlsx.readFile(`./storage/${uuid}/source.${extension}`)
     const names = spreadsheet.SheetNames
-    let json: QuizQuestion[] | any[] = xlsx.utils.sheet_to_json(spreadsheet.Sheets[names[0]])
-    json.forEach(j => {
+    let data: QuizQuestion[] | any[] = xlsx.utils.sheet_to_json(spreadsheet.Sheets[names[0]])
+    data.forEach(j => {
       j.question = j[QuizSheetColumn.QUESTIONS]
       delete j[QuizSheetColumn.QUESTIONS]
       j.answer = j[QuizSheetColumn.ANSWERS]?.toString()
@@ -245,12 +245,12 @@ export class SheetsService {
         delete j[QuizSheetColumn.PICTURES]
       }
     });
-    this.write(uuid, JSON.stringify(json))
+    this.write(uuid, JSON.stringify(data))
 
     const utf8name = Buffer.from(file.originalname, 'latin1').toString('utf8')
     const name = utf8name.slice(0, utf8name.lastIndexOf('.'))
       .replaceAll('-', ' ').replaceAll('_', ' ').trim()
-    StorageRoute.addToList({name, uuid, createdAt: Date.now()} as QuizInfo)
+    StorageRoute.addToList({name, uuid, createdAt: Date.now(), size: data.length} as QuizInfo)
   }
 
   public static write(uuid: string, jsonStringified: string) {
