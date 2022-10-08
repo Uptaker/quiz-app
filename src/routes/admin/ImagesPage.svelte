@@ -5,9 +5,11 @@
   import {onMount} from 'svelte'
   import QuizImage from '../../common/QuizImage.svelte'
   import Spinner from '../../common/Spinner.svelte'
+  import {sendToast, ToastType} from '../../toast'
 
   let images: string[]
   let filter = ''
+  let loading = false
 
   onMount(() => load())
 
@@ -17,6 +19,22 @@
       names = names?.filter(name => name.toLowerCase().includes(filter))
     }
     return names
+  }
+
+  async function remove(imgToDelete: string) {
+    loading = true
+    try {
+      if (!confirm(`Oled kindel, et soovid kustutada pildi ${imgToDelete}?`)) return
+      const response = await fetch('/api/image/' + imgToDelete, {method: 'DELETE'})
+      if (response.ok) {
+        sendToast(`Pilt ${imgToDelete} kustutatud`)
+        images = images.filter(image => image !== imgToDelete)
+      } else throw Error('Error response')
+    } catch (e) {
+      sendToast('Kustutamine ebabõnnestus', ToastType.ERROR)
+    } finally {
+      loading = false
+    }
   }
 
   async function load() {
@@ -40,7 +58,7 @@
             <div class="card bg-white rounded shadow d-flex flex-row justify-content-between gap-3 w-100 p-3 mb-5">
               <div class="d-flex flex-column justify-content-between gap-3">
                 <h3>{image}</h3>
-                <button class="btn btn-danger w-min">Kustuta</button>
+                <button disabled={loading} class="btn btn-danger w-min" on:click={() => remove(image)}>Kustuta</button>
               </div>
               <div>
                 <QuizImage {image} maxHeight={150}/>

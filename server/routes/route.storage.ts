@@ -161,7 +161,7 @@ export class ImagesRoute {
       res.status(200).send()
     } catch (e) {
       log.error(`${e}`)
-      res.status(404).send('No such image')
+      res.status(400).send('No such image')
     }
   }
 
@@ -242,7 +242,7 @@ export class SheetsService {
 
     const utf8name = Buffer.from(file.originalname, 'latin1').toString('utf8')
     const name = utf8name.slice(0, utf8name.lastIndexOf('.'))
-      .replaceAll('-', ' ').replaceAll('_', ' ')
+      .replaceAll('-', ' ').replaceAll('_', ' ').trim()
     StorageRoute.addToList({name, uuid, createdAt: Date.now().toString()} as QuizInfo)
   }
 

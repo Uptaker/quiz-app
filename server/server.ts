@@ -35,7 +35,7 @@ app.delete('/api/quiz/:uuid', AdminRoute.routeGuard, (req: Request, res: Respons
 app.post('/api/image/', [AdminRoute.routeGuard, ImagesRoute.upload.array('files')], (req: Request, res: Response) => ImagesRoute.store(req, res))
 app.get('/api/image/', (req: Request, res: Response) => ImagesRoute.readList(req, res))
 app.get('/api/image/:name', (req: Request, res: Response) => ImagesRoute.read(req, res))
-app.delete('/api/image/name', AdminRoute.routeGuard, (req: Request, res: Response) => ImagesRoute.delete(req, res))
+app.delete('/api/image/:name', AdminRoute.routeGuard, (req: Request, res: Response) => ImagesRoute.delete(req, res))
 
 app.use(express.static('build'))
 app.get('*', (req: Request, res: Response) => {
