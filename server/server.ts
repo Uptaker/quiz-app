@@ -30,6 +30,7 @@ app.post('/api/user/logout', (req: Request, res: Response) => AdminRoute.logout(
 app.post('/api/quiz/', [AdminRoute.routeGuard ,StorageRoute.upload.array('files')], (req: Request, res: Response) => StorageRoute.store(req, res))
 app.get('/api/quiz/', (req: Request, res: Response) => StorageRoute.readList(req, res))
 app.get('/api/quiz/:uuid', (req: Request, res: Response) => StorageRoute.read(req, res))
+app.put('/api/quiz/:uuid', AdminRoute.routeGuard,(req: Request, res: Response) => StorageRoute.update(req, res))
 app.delete('/api/quiz/:uuid', AdminRoute.routeGuard, (req: Request, res: Response) => StorageRoute.deleteQuiz(req, res))
 
 app.post('/api/image/', [AdminRoute.routeGuard, ImagesRoute.upload.array('files')], (req: Request, res: Response) => ImagesRoute.store(req, res))

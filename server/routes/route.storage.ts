@@ -103,10 +103,17 @@ export class StorageRoute {
   }
 
   static update(req: Request, res: Response) {
-    if (req.file) {
-      res.status(200).send('Sending multiple files success!')
-    } else {
-      res.status(422).send('Could not process request - upload failed')
+    const uuid = req.params['uuid']
+    const body: QuizInfo = req.body
+    if (!body?.uuid || !body?.name) return res.sendStatus(400).send('Vale UUID')
+    if (!uuid || uuid !== body?.uuid) return res.sendStatus(400).send('Vale UUID')
+    try {
+      this.removeInQuizList(uuid)
+      this.addToList({...body, updatedAt: Date.now()})
+      res.sendStatus(200)
+    } catch (e) {
+      log.error(`${e}`)
+      res.sendStatus(400).send('No such test')
     }
   }
 }
@@ -243,7 +250,7 @@ export class SheetsService {
     const utf8name = Buffer.from(file.originalname, 'latin1').toString('utf8')
     const name = utf8name.slice(0, utf8name.lastIndexOf('.'))
       .replaceAll('-', ' ').replaceAll('_', ' ').trim()
-    StorageRoute.addToList({name, uuid, createdAt: Date.now().toString()} as QuizInfo)
+    StorageRoute.addToList({name, uuid, createdAt: Date.now()} as QuizInfo)
   }
 
   public static write(uuid: string, jsonStringified: string) {

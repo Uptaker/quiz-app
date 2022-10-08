@@ -28,6 +28,20 @@
     })
   }
 
+  async function update() {
+    quiz.info.name = quiz.info.name.trim()
+    await fetch('/api/quiz/' + id, {
+      headers: {'Content-Type': 'application/json'},
+      method: 'PUT', body: JSON.stringify(quiz.info)
+    }).then(res => {
+      if (res.ok) {
+        sendToast(`Test ${formatUuid(quiz.info.uuid)} ümber nimetatud`)
+      } else {
+        sendToast(`Tekis tõrge kustutamise ajal. Palun proovi uuesti`)
+      }
+    }).catch(() => sendToast(`Tekis tõrge kustutamise ajal. Palun proovi uuesti`) )
+  }
+
   async function load() {
     quiz = await fetch('/api/quiz/' + id, {
       headers: {'Accept': 'application/json'}
@@ -37,12 +51,12 @@
 </script>
 
 <ProtectedPageCard flex="" transparent title={'Muuda test'} padding="p-0">
-  {#if quiz?.questions?.length}
+  {#if quiz?.questions?.length && quiz?.info}
     <div class="d-flex flex-column gap-3 mb-5">
       <p class="text-small fw-bolder text-primary">#{formatUuid(quiz.info.uuid)} {quiz.info.name}</p>
       <div>
         <label for="quiz-name" class="lead fw-bolder"><i class="fa-solid fa-quote-left"></i>&nbsp;&nbsp;Pealkiri</label>
-        <input id="quiz-name" type="text" class="form-control mt-1 fw-normal bg-white" placeholder="Otsi..." bind:value={quiz.info.name} />
+        <input id="quiz-name" type="text" class="form-control mt-1 fw-normal bg-white" placeholder="Uus pealkiri siia..." bind:value={quiz.info.name} />
       </div>
     </div>
 
@@ -50,10 +64,8 @@
       <div class="d-flex gap-3">
         <button class="btn btn-danger" on:click={remove}>Kustuta</button>
       </div>
-      <button class="btn btn-primary" disabled>Salvesta</button>
+      <button class="btn btn-primary" on:click={update} disabled={!quiz?.info?.name} >Muuda nime</button>
     </div>
-
-<!--    <QuizModeAllAtOnce bind:questions={quiz.questions}/>-->
   {:else}
     {#if quiz}
       <Card padding="p-3">
