@@ -41,7 +41,7 @@
       <Card padding="px-3 py-5">
         <div class="my-5">
           <h1 class="text-center" style="font-size: 4rem"><i class="fa-solid fa-magnifying-glass"></i></h1>
-          <p>Otsing tagastas tühjuse</p>
+          <p>Testide otsing tagastas tühjuse</p>
         </div>
       </Card>
     {/if}
