@@ -6,7 +6,8 @@
 </script>
 
 <Page>
-  <ProtectedPageCard title="Admin" transparent>
+  <ProtectedPageCard transparent>
+    <h3 class="mb-4 mx-auto">Lae ülesse</h3>
     <UploadQuestions/>
     <UploadImages/>
   </ProtectedPageCard>
