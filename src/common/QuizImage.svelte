@@ -1,19 +1,19 @@
 <script lang="ts">
-  import {QuizQuestion} from '../../server/types'
+  export let image: string
+  export let maxHeight: number
 
-  export let question: QuizQuestion
   let imageError = false
 </script>
 
-{#if question.pictureName}
-  <div class="px-1 px-md-3">
+{#if image}
+  <div class="px-1 px-md-3 {$$props.class}">
     {#if imageError}
       <div style="border: 1px dashed lightslategray; padding: 90px; border-radius: 15px">
-        Puudub pilt <code>{question.pictureName}</code>
+        Puudub pilt <code>{image}</code>
       </div>
     {:else}
       <img on:error={() => imageError = true} class="w-100 rounded-4"
-           src="/api/image/{question.pictureName}" alt={question.pictureName}>
+           src="/api/image/{image}" alt={image} style="height: {maxHeight ? maxHeight + 'px' : 'auto'} !important;">
     {/if}
   </div>
 {/if}
