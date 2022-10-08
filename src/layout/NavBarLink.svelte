@@ -8,25 +8,20 @@
   $: active = to && (($location.pathname == '/' && (to == '' || to == '/')) || $location.pathname.startsWith('/' + to))
 </script>
 
-<LinkTo class="nav-item py-1 px-3 {active ? 'nav-active fw-bolder' : ''}" {to}>
+<LinkTo class="btn nav-item py-1 px-3 {active ? 'nav-active fw-bolder' : ''}" {to}>
   <slot/>
 </LinkTo>
 
 <style>
   :global(.nav-item) {
-    color: var(--text-color);
-    text-decoration: none;
     box-sizing: border-box;
     transition: border 50ms, height 1s;
     border-bottom: 2px solid transparent;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   :global(.nav-active) {
     border-bottom: 2px solid cornflowerblue;
-  }
-
-  :global(.nav-item):hover {
-    border-bottom: 2px solid gray;
-    color: gray
   }
 </style>

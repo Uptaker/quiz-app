@@ -4,6 +4,7 @@
   import QuizPage from './routes/quiz/QuizPage.svelte'
   import TestsPage from './routes/tests/TestsPage.svelte'
   import AdminPage from './routes/admin/AdminPage.svelte'
+  import ImagesPage from './routes/admin/ImagesPage.svelte'
   import LoginPage from './routes/login/LoginPage.svelte'
   import QuizEditPage from './routes/admin/QuizEditPage.svelte'
   import Navbar from './layout/Navbar.svelte'
@@ -28,6 +29,7 @@
           <NavBarLink to="/">Testid</NavBarLink>
           {#if $isAdmin}
             <NavBarLink to="admin">Admin</NavBarLink>
+            <NavBarLink to="images">Pildid</NavBarLink>
           {/if}
         </div>
         {#if $isAdmin}
@@ -52,6 +54,7 @@
 
       {#if $isAdmin}
         <Route path="admin" component={AdminPage}/>
+        <Route path="images" component={ImagesPage}/>
       {/if}
     </div>
     <Route component={NotFoundPage}/>
