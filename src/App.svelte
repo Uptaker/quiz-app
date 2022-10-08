@@ -26,10 +26,10 @@
     <nav>
       <Navbar>
         <div class="d-flex flex-column flex-sm-row gap-3">
-          <NavBarLink to="/">Testid</NavBarLink>
+          <NavBarLink to="/"><i class="fa-regular fa-file-lines"></i>&nbsp;&nbsp;Testid</NavBarLink>
           {#if $isAdmin}
-            <NavBarLink to="admin">Admin</NavBarLink>
-            <NavBarLink to="images">Pildid</NavBarLink>
+            <NavBarLink to="upload"><i class="fa-solid fa-cloud-arrow-up">&nbsp;&nbsp;</i>Lae ülesse</NavBarLink>
+            <NavBarLink to="images"><i class="fa-regular fa-images"></i>&nbsp;&nbsp;Pildid</NavBarLink>
           {/if}
         </div>
         {#if $isAdmin}
@@ -53,7 +53,7 @@
       </Route>
 
       {#if $isAdmin}
-        <Route path="admin" component={AdminPage}/>
+        <Route path="upload" component={AdminPage}/>
         <Route path="images" component={ImagesPage}/>
       {/if}
     </div>
