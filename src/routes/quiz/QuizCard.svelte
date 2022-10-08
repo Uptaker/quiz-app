@@ -15,7 +15,7 @@
     <span class="fw-bolder text-small">{index}&nbsp;/&nbsp;{questionAmount}</span>
   </div>
 
-  <QuizImage {question} />
+  <QuizImage image={question.pictureName} />
 
   <input bind:value={question.studentAnswer} class="form-control" type="text" placeholder="Vastus" required>
 </Card>

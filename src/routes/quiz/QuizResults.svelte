@@ -23,7 +23,7 @@
   {#each questions as q}
       <Card fullWidth flex="d-flex justify-content-between align-items-center gap-3 gap-lg-4" padding="px-3 px-md-4 px-lg-5 py-4">
         <span class="lead mb-3">{q.question}</span>
-        <QuizImage question={q} />
+        <QuizImage image={q.pictureName} />
         {#if isQuizAnswerCorrect(q)}
           <QuizAnswerResult key="Tubli!" value={q.answer} icon="correct" result="correct"/>
         {:else}
