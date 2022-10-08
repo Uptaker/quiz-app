@@ -18,7 +18,7 @@
       })
       if (response.ok) {
         initSession()
-        sendToast('Tere tulemast tagasi!')
+        sendToast('Tere tulemast tagasi!', ToastType.INFO)
       }
       else throw Error('Unsuccessful authorization')
     } catch (e) {
