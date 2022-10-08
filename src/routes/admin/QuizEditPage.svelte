@@ -36,6 +36,7 @@
     }).then(res => {
       if (res.ok) {
         sendToast(`Test ${formatUuid(quiz.info.uuid)} ümber nimetatud`)
+        navigate('/')
       } else {
         sendToast(`Tekis tõrge kustutamise ajal. Palun proovi uuesti`)
       }
