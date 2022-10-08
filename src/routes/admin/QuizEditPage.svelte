@@ -5,7 +5,7 @@
   import {formatUuid} from '../../utils'
   import Card from '../../common/Card.svelte'
   import {navigate} from 'svelte-navigator'
-  import {sendToast} from '../../toast'
+  import {sendToast, ToastType} from '../../toast'
   import ProtectedPageCard from '../../common/ProtectedPageCard.svelte'
 
   export let id: string
@@ -23,7 +23,7 @@
         sendToast(`Test ${formatUuid(quiz.info.uuid)} kustutatud`)
         navigate('/')
       } else {
-        sendToast(`Tekis tõrge kustutamise ajal. Palun proovi uuesti`)
+        sendToast(`Tekis tõrge kustutamise ajal. Palun proovi uuesti`, ToastType.ERROR)
       }
     })
   }
@@ -38,9 +38,9 @@
         sendToast(`Test ${formatUuid(quiz.info.uuid)} ümber nimetatud`)
         navigate('/')
       } else {
-        sendToast(`Tekis tõrge kustutamise ajal. Palun proovi uuesti`)
+        sendToast(`Tekis tõrge kustutamise ajal. Palun proovi uuesti`, ToastType.ERROR)
       }
-    }).catch(() => sendToast(`Tekis tõrge kustutamise ajal. Palun proovi uuesti`) )
+    }).catch(() => sendToast(`Tekis tõrge kustutamise ajal. Palun proovi uuesti`, ToastType.ERROR) )
   }
 
   async function load() {
