@@ -22,3 +22,7 @@ export interface UserAuth {
   username: string,
   password: string
 }
+
+export enum QuizSheetColumn {
+  QUESTIONS = 'KÜSIMUSED', ANSWERS = 'VASTUSED', PICTURE = 'PILT', PICTURES = 'PILDID'
+}

@@ -1,7 +1,7 @@
 import {config} from '../config'
 import type {Request, Response} from 'express'
 import type {UserAuth} from '../types'
-import {log} from '../Logger'
+import {log} from '../utils/Logger'
 import {session} from '../server'
 
 export class AdminRoute {
