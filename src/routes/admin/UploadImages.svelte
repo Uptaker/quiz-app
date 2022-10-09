@@ -12,10 +12,14 @@
 
   async function upload() {
     try {
+      loading = true
       const formData = new FormData()
       for (const file of files) formData.append('files', file)
       const response = await fetch('/api/image', {method: 'POST', body: formData})
-      if (response.ok) sendToast('Pildid ülesse laetud')
+      if (response.ok) {
+        duplicates = []
+        sendToast('Pildid ülesse laetud')
+      }
       else throw Error('Failed up upload')
     } catch (e) {
         sendToast('Tekis süsteemi tõrge. Palun proovige uuesti.', ToastType.ERROR)
@@ -23,8 +27,6 @@
       loading = false
       files = null
     }
-
-
   }
 
   async function handleSubmit() {
@@ -40,9 +42,7 @@
         loading = false
         return sendToast("Leitud pildid, mis on juba olemas<br><br>Pildid peavad olema unikaalse nimega", ToastType.ERROR)
       }
-
       await upload()
-
       loading = false
       files = null
     }
