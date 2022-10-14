@@ -1,10 +1,12 @@
 # Quiz App
 
-A quiz app for creating tests using existing Excel/CSV files.
+- A quiz app for tests/quizzes using existing Excel/CSV files.
+- Image support using a persistent Docker volume.
+- Single-user login system for quiz management.
 
 Built with Svelte/TypeScript/Bootstrap + Node/Express
 
-All generated data is in the `/storage` folder and is persisted as a docker-compose volume.
+All generated data and images are in the `/storage` folder and is persisted as a docker-compose volume.
 
 ## Deployment
 
